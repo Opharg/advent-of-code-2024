@@ -61,6 +61,7 @@ def count_robots(space_map) -> tuple[int, int, int, int]:
 
     return q1, q2, q3, q4
 
+
 def part_2(memory):
     bcolors = {
         '1': '\033[95m1' + '\033[0m',
@@ -83,7 +84,7 @@ def part_2(memory):
         # Simple pattern checks
         flag = False
         # Looking for clusters (so success)
-        #for i in space_map:
+        # for i in space_map:
         #    for j in i:
         #        if j > 0:
         #            flag = True
@@ -116,13 +117,10 @@ def part_2(memory):
             matches.pop()
 
 
-
-
 def main():
     # input
     get_input(14)
-    with open(r'./'
-              r'inputs/d14.txt', 'r') as file:
+    with open(r'./inputs/d14.txt', 'r') as file:
         memory = file.read()
     memory = process_input(memory)
 
@@ -135,7 +133,9 @@ def main():
     safety_factor = reduce(operator.mul, robot_count)
     print(f'Part 1: {safety_factor}')
 
+    input("Press Enter to start Part 2...")
     part_2(memory)
+
 
 if __name__ == '__main__':
     main()
